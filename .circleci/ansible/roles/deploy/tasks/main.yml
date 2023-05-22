@@ -1,0 +1,14 @@
+- name: update apt package
+  become: true
+  apt:
+    update_cache: yes
+
+- name: copy deployment k8s
+  copy:
+    src: deployment.yml
+    dest: ~/deployment.yml
+
+- name: start
+  shell: |
+    alias kubectl="microk8s.kubectl"
+    kubectl apply -f ~/deployment.yml
