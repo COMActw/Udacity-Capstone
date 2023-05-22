@@ -51,7 +51,6 @@ jobs:
             INFRAS_PUBLIC_IP=$(aws ec2 describe-instances \
               --query 'Reservations[*].Instances[*].PublicIpAddress' \
               --filters "Name=tag:Name,Values=udacity-capstone" \
-              --region=us-east-1 \
               --output text)
 
             if [ -z "$INFRAS_PUBLIC_IP" ]
@@ -60,7 +59,6 @@ jobs:
               aws cloudformation deploy \
                 --template-file .circleci/files/infrastructure.yml \
                 --tags project=udacity-capstone \
-                --region=us-east-1 \
                 --stack-name "udacity-capstone"
             else
               echo "Infrastucture was existed"
