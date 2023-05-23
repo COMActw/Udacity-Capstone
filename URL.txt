@@ -1,0 +1,10 @@
+[App]
+http://44.214.105.23:30080
+
+
+[DockerHub]
+https://hub.docker.com/repository/docker/ndhhung1011/udacity-capstone
+
+
+[Github]
+https://github.com/COMActw/Udacity-Capstone
