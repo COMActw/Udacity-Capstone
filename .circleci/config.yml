@@ -96,6 +96,7 @@ jobs:
           command: |
             cd .circleci/ansible
             cat inventory.txt
+            pip3 -U paramiko
             ansible-playbook -i inventory.txt configure-server.yml
 
   deploy-app:
