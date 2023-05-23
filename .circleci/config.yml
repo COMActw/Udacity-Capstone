@@ -84,7 +84,7 @@ jobs:
       - checkout
       - add_ssh_keys:
           fingerprints:
-            - "e9:c4:65:d5:3b:80:d0:b6:01:50:60:56:a4:0e:86:8a"
+            - "df:8e:97:b6:ce:15:92:26:3a:37:6d:5a:d9:11:23:d5"
       - attach_workspace:
           at: ~/
       - run:
@@ -96,7 +96,6 @@ jobs:
           command: |
             cd .circleci/ansible
             cat inventory.txt
-            pip3 -U paramiko
             ansible-playbook -i inventory.txt configure-server.yml
 
   deploy-app:
@@ -106,7 +105,7 @@ jobs:
       - checkout
       - add_ssh_keys:
           fingerprints:
-            - "e9:c4:65:d5:3b:80:d0:b6:01:50:60:56:a4:0e:86:8a"
+            - "df:8e:97:b6:ce:15:92:26:3a:37:6d:5a:d9:11:23:d5"
       - attach_workspace:
           at: ~/
       - run:
